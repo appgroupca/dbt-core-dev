@@ -1,1 +1,6 @@
+version: 2
 
+sources:
+  - name: newstore.event
+    tables:
+      - name: event
