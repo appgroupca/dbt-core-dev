@@ -4,5 +4,7 @@ sources:
   - name: newstore
     tables:
       - name: event
-      
+  - name: sftp
+    tables:
+      - name: smstraffic         
 
