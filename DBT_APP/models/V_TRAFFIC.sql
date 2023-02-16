@@ -8,4 +8,4 @@ select
     CAST(column_1 AS DATE) date,
     CAST(column_1 AS TIME(0)) time
 from
-    {{ source('sftp', 'traffic') }}
+    {{ source('sftp', 'smstraffic') }}
