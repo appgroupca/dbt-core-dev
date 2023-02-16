@@ -6,5 +6,4 @@ sources:
       - name: event
   - name: sftp
     tables:
-      - name: smstraffic         
-
+      - name: smstraffic
