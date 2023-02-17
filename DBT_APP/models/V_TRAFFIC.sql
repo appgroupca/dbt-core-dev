@@ -3,9 +3,17 @@
 
 select 
     column_0 as store_id,
-    column_1 as timestamp,
-    column_2 as traffic,
-    CAST(column_1 AS DATE) date,
-    CAST(column_1 AS TIME(0)) time
+    sum(column_2) as traffic,
+    CAST(column_1 AS DATE) date
 from
     {{ source('sftp', 'smstraffic') }}
+group by 1
+
+UNION 
+
+select
+    store_id,
+    traffic,
+    date
+from
+    {{ source('sftp', 'smstraffic_historical') }}    

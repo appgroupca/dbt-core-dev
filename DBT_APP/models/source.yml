@@ -7,3 +7,4 @@ sources:
   - name: sftp
     tables:
       - name: smstraffic
+      - name: smstraffic_historical
