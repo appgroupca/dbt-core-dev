@@ -9,11 +9,3 @@ from
     {{ source('sftp', 'smstraffic') }}
 group by column_0,column_1
 
-UNION 
-
-select
-    store_id,
-    traffic,
-    date
-from
-    {{ source('sftp', 'smstraffic_historical') }}    
