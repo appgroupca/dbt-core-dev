@@ -39,3 +39,6 @@ models:
     newstore:
       +schema: newstore
       +materialized: table
+    sms:
+      +schema: sms
+      +materialized: view
