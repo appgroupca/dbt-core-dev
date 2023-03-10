@@ -4,7 +4,8 @@ sources:
   - name: newstore
     tables:
       - name: event
-  - name: sftp
+  - name: sms
     tables:
-      - name: smstraffic
-      - name: smstraffic_historical
+      - name: traffic
+      - name: storetraffic_historical
+	

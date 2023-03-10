@@ -6,6 +6,6 @@ select
     sum(column_2) as traffic,
     LEFT(column_1,10) as [date]
 from
-    {{ source('sftp', 'smstraffic') }}
+    {{ source('sms', 'traffic') }}
 group by column_0,LEFT(column_1,10)
 

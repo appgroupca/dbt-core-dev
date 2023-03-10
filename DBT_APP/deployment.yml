@@ -2,9 +2,9 @@ jobs:
 # Give each job a unique name. The name will be displayed in the Fivetran dashboard once your jobs are imported.
 # Job names must be unique.
  - name: EVENTS
-   targetName: prd # The name of the target that will be used when running the job. If it's not specified, the target will be named 'prod'.
+   targetName: prod # The name of the target that will be used when running the job. If it's not specified, the target will be named 'prod'.
    schedule: 0 9 * * * # Define when this job should run, using cron format. This example will run every day at 12:00pm (according to your warehouse timezone). For help with cron formatting, visit https://crontab.guru/.
    steps:
      - name: run models events # Give each step in your job a name. This will enable you to track the steps in the logs.
-       command: dbt run --select V_EVENT_CUSTOMER # Enter the dbt command that should run in this step. This example will run all your models. For a list of available commands visit https://docs.getdbt.com/reference/model-selection-syntax/.
+       command: dbt run --select newstore # Enter the dbt command that should run in this step. This example will run all your models. For a list of available commands visit https://docs.getdbt.com/reference/model-selection-syntax/.
 
