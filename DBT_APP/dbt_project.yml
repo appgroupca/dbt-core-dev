@@ -40,3 +40,6 @@ models:
     sms:
       +schema: sms
       +materialized: view
+    m3:
+      +schema: m3
+      +materialized: table
