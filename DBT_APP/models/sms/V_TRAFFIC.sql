@@ -17,4 +17,3 @@ from
 
 {% endif %}
 group by column_0,LEFT(column_1,10)
-
