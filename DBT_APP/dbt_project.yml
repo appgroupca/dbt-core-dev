@@ -41,8 +41,9 @@ models:
       +schema: sms
       +materialized: view
     m3:
-      +schema: m3
+      +schema: dbo
       +materialized: table
+      +database: M3RPTDEV
     google_ads_mck:
       +schema: google_ads_mck
       +materialized: view
