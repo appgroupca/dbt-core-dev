@@ -43,3 +43,7 @@ models:
     m3:
       +schema: m3
       +materialized: table
+    google_ads_mck:
+      +schema: google_ads_mck
+      +materialized: view
+      +database: SHOPIFY_PROD

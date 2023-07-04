@@ -8,6 +8,15 @@ sources:
     tables:
       - name: traffic
       - name: storetraffic_historical
+  - name: google_ads_mck
+    database: SHOPIFY_PROD
+    schema: google_ads_mck
+    tables:
+      - name: ad_history
+      - name: ad_stats
+      - name: campaign_history
+      - name: account_history
+      - name: ad_group_history
   - name: m3
     database: M3RPTDEV
     schema: dbo
