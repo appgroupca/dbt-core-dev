@@ -8,6 +8,7 @@ jobs:
        command: dbt run --select newstore # Enter the dbt command that should run in this step. This example will run all your models. For a list of available commands visit https://docs.getdbt.com/reference/model-selection-syntax/.
  - name: GOOGLE_ADS_MCK
    targetName: prod
+   schedule: 0 7 * * *
    steps:
      - name: run models GOOGLE_ADS_MCK
        command: dbt run --select google_ads_mck

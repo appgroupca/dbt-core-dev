@@ -16,7 +16,7 @@ final as (
         cost_micros / 1000000.0 as spend, 
         impressions
 
-    from {{source('google_ads_mck','ad_stats')}}
+    from {{ source('google_ads_mck','ad_stats') }}
 )
 
 select * from final

@@ -17,7 +17,7 @@ final as (
         status,
         tracking_url_template,
         row_number() over (partition by id order by updated_at desc) as is_most_recent_record
-    from {{source('google_ads_mck','campaign_history')}}
+    from {{ source('google_ads_mck','campaign_history') }}
 )
 
 select * 
