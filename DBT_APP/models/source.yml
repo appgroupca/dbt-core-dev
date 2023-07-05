@@ -17,6 +17,15 @@ sources:
       - name: campaign_history
       - name: account_history
       - name: ad_group_history
+  - name: google_ads_sk
+    database: SHOPIFY_PROD
+    schema: google_ads_sk
+    tables:
+      - name: ad_history
+      - name: ad_stats
+      - name: campaign_history
+      - name: account_history
+      - name: ad_group_history
   - name: m3
     database: M3RPTDEV
     schema: dbo
