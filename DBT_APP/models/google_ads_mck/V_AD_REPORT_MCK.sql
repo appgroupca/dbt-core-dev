@@ -2,9 +2,6 @@ with
 
 stat as (
 
-    --select *
-    --from {{ source('google_ads_mck','ad_stats') }}
-
     select *
     from {{ ref('T_AD_STATS')}}
 ), 
@@ -32,9 +29,6 @@ ad_groups as (
 ),
 
 ads as (
-
-    --select *
-    --from {{ source('google_ads_mck','ad_history') }}
 
     select *
     from {{ ref('T_AD_HISTORY')}}
