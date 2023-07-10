@@ -26,6 +26,14 @@ sources:
       - name: campaign_history
       - name: account_history
       - name: ad_group_history
+  - name: facebook_ads
+    database: SHOPIFY_PROD
+    tables:
+      - name: account_history
+      - name: ad_history
+      - name: ad_set_history
+      - name: campaign_history
+      - name: basic_ad
   - name: m3
     database: M3RPTDEV
     schema: dbo

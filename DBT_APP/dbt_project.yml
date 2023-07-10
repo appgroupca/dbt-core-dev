@@ -52,3 +52,7 @@ models:
       +schema: google_ads_sk
       +materialized: view
       +database: SHOPIFY_PROD
+    facebook_ads:
+      +schema: facebook_ads
+      +materilalized: view
+      +database: SHOPIFY_PROD
