@@ -5,7 +5,6 @@ CONVERT(VARCHAR,[Date],23) AS [DATE]
 --,[store_id] AS RAW_BRANCH
 ,ISNULL(BOB.BRANCH,[store_id]) AS BRANCH
 ,ROUND(ISNULL([traffic],0),0) AS TRAFFIC
-,cast(NULL as datetimeoffset)  as _fivetran_synced
 
  
 
