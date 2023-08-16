@@ -17,6 +17,7 @@ sources:
       - name: campaign_history
       - name: account_history
       - name: ad_group_history
+      - name: campaign_stats
   - name: google_ads_sk
     database: SHOPIFY_PROD
     schema: google_ads_sk
@@ -26,6 +27,7 @@ sources:
       - name: campaign_history
       - name: account_history
       - name: ad_group_history
+      - name: campaign_stats
   - name: facebook_ads
     database: SHOPIFY_PROD
     tables:
@@ -34,6 +36,11 @@ sources:
       - name: ad_set_history
       - name: campaign_history
       - name: basic_ad
+  - name: google_analytics
+    database: SHOPIFY_PROD
+    tables:
+      - name: date_breakdown_currency
+      - name: date_breakdown_nocurrency
   - name: m3
     database: M3RPTDEV
     schema: dbo

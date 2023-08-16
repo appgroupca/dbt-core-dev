@@ -54,5 +54,9 @@ models:
       +database: SHOPIFY_PROD
     facebook_ads:
       +schema: facebook_ads
-      +materilalized: view
+      +materialized: view
+      +database: SHOPIFY_PROD
+    google_analytics:
+      +schema: google_analytics
+      +materialized: view
       +database: SHOPIFY_PROD
