@@ -2,19 +2,19 @@ with
 
 stat as (
 
-	select * from {{ ref('T_AD_CAMPAIGN_STATS')}}
+	select * from {{ ref('T_AD_CAMPAIGN_STATS_SK')}}
 ), 
 
 accounts as (
 
- select * from {{ ref('T_AD_ACCOUNT_HISTORY')}}
+ select * from {{ ref('T_AD_ACCOUNT_HISTORY_SK')}}
  where is_most_recent_record=1
 
 ), 
 
 campaigns as (
 
-   select * from {{ ref('T_AD_CAMPAIGNS')}}
+   select * from {{ ref('T_AD_CAMPAIGNS_SK')}}
 	where is_most_recent_record=1
 ), 
 
