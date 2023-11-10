@@ -11,7 +11,9 @@ final as (
         ad_network_type,
         device,
         ad_id, 
-        campaign_id, 
+        campaign_id,
+        conversions,
+        conversions_value, 
         clicks, 
         cost_micros / 1000000.0 as spend, 
         impressions
