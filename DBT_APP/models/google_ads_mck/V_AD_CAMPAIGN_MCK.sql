@@ -32,7 +32,9 @@ fields as (
         campaigns.status,
         sum(stat.spend) as spend,
         sum(stat.clicks) as clicks,
-        sum(stat.impressions) as impressions
+        sum(stat.impressions) as impressions,
+        sum(stat.conversions) as conversions,
+        sum(stat.conversions_value) as conversions_value
 
     from stat
     left join campaigns
