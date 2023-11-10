@@ -11,7 +11,9 @@ select
         device,
         clicks, 
         cost_micros / 1000000.0 as spend, 
-        impressions
+        impressions,
+        conversions,
+        conversions_value 
 
     from {{ source('google_ads_mck','campaign_stats') }}
 
