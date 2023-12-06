@@ -36,6 +36,7 @@ sources:
       - name: ad_set_history
       - name: campaign_history
       - name: basic_ad
+      - name: actions_action_values
   - name: google_analytics
     database: SHOPIFY_PROD
     tables:

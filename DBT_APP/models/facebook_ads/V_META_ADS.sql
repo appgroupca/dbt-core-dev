@@ -37,6 +37,13 @@ ads as (
 
 ),
 
+actions as (
+
+    select *
+    from {{ ref('T_META_ACTIONS') }}
+
+),
+
 joined as (
 
     select 
@@ -51,7 +58,8 @@ joined as (
         ads.ad_name,
         sum(report.clicks) as clicks,
         sum(report.impressions) as impressions,
-        sum(report.spend) as spend
+        sum(report.spend) as spend,
+        actions.purchase_value
 
     from report 
     left join accounts
@@ -62,6 +70,8 @@ joined as (
         on ads.campaign_id = campaigns.campaign_id
     left join ad_sets
         on ads.ad_set_id = ad_sets.ad_set_id
+    left join actions
+        on ads.ad_id = actions.ad_id and report.date_day = actions.date_day
     GROUP BY report.date_day,
         accounts.account_id,
         accounts.account_name,
@@ -70,7 +80,8 @@ joined as (
         ad_sets.ad_set_id,
         ad_sets.ad_set_name,
         ads.ad_id,
-        ads.ad_name
+        ads.ad_name,
+        actions.purchase_value
 )
 
 select *
