@@ -60,7 +60,7 @@ joined as (
         sum(report.impressions) as impressions,
         sum(report.spend) as spend,
         actions.purchase_value,
-        round(actions.purchase_value/sum(report.spend),2) as roas
+        round(actions.purchase_value/ISNULL(sum(report.spend),0),2) as roas
 
 
     from report 
