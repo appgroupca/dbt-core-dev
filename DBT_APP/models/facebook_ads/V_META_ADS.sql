@@ -57,10 +57,10 @@ joined as (
         ads.ad_id,
         ads.ad_name,
         sum(report.clicks) as clicks,
-        sum(report.impressions) as impressions,
+        ISNULL(sum(report.impressions),0) as impressions,
         sum(report.spend) as spend,
-        actions.purchase_value,
-        round(actions.purchase_value/ISNULL(sum(report.spend),0),2) as roas
+        ISNULL(actions.purchase_value,0) as purchase_value,
+        ISNULL(round(actions.purchase_value/NULLIF(sum(report.spend),0),2),0) as roas
 
 
     from report 
