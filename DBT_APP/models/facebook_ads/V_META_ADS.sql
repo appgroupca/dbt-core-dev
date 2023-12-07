@@ -59,7 +59,9 @@ joined as (
         sum(report.clicks) as clicks,
         sum(report.impressions) as impressions,
         sum(report.spend) as spend,
-        actions.purchase_value
+        actions.purchase_value,
+        round(actions.purchase_value/sum(report.spend),2) as roas
+
 
     from report 
     left join accounts
