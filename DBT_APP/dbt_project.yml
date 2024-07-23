@@ -60,3 +60,11 @@ models:
       +schema: google_analytics
       +materialized: view
       +database: SHOPIFY_PROD
+    loop_ca:
+      +schema: loop_ca
+      +materialized: table
+      +database: SHOPIFY_PROD
+    centricplm:
+      +schema: centricplm
+      +materialized: table
+      +database: M3RPTDEV
