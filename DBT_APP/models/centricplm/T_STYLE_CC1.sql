@@ -15,7 +15,8 @@ select
 	  ,country
 	  ,designated_supplier
 	  ,active_style
-	  ,season
+	  ,SUBSTRING(Season,1, 4) AS Season
+	  ,SUBSTRING(season, CHARINDEX(' ', season) + 1, LEN( season)) AS Brand
       ,style_name
       ,[collection]
 	  ,V.value as color_code
