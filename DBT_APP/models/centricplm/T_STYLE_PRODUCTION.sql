@@ -54,10 +54,23 @@ select c1.[id]
       ,c1.[supplier]
 	  ,c1.color_code
 	  ,c2.colorways
-	  ,c3.delivery1
-	  ,c4.delivery2
-	  ,c5.delivery3
-	  ,c6.delivery4
+	  ,CASE 
+        WHEN 
+            CAST(
+                CASE WHEN c3.delivery1 = 'true' THEN 1 ELSE 0 END +
+                CASE WHEN c4.delivery2 = 'true' THEN 2 ELSE 0 END +
+                CASE WHEN c5.delivery3 = 'true' THEN 3 ELSE 0 END +
+                CASE WHEN c6.delivery4 = 'true' THEN 4 ELSE 0 END 
+            AS VARCHAR) + 'M' = '0M' 
+        THEN ''
+        ELSE 
+            CAST(
+                CASE WHEN c3.delivery1 = 'true' THEN 1 ELSE 0 END +
+                CASE WHEN c4.delivery2 = 'true' THEN 2 ELSE 0 END +
+                CASE WHEN c5.delivery3 = 'true' THEN 3 ELSE 0 END +
+                CASE WHEN c6.delivery4 = 'true' THEN 4 ELSE 0 END 
+            AS VARCHAR) + 'M' 
+    	END AS colorway_delivery
 	  ,c7.color_active
 from CC1 C1
 Left join CN1 c2 on c1.id=c2.id and c1.color_code_rank=c2.color_name_rank
