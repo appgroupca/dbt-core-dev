@@ -79,3 +79,4 @@ Left join AD2 c4 on c1.id=c4.id and c1.color_code_rank=c4.app_del2_rank
 Left join AD3 c5 on c1.id=c5.id and c1.color_code_rank=c5.app_del3_rank
 Left join AD4 c6 on c1.id=c6.id and c1.color_code_rank=c6.app_del4_rank
 Left join CA1 c7 on c1.id=c7.id and c1.color_code_rank=c7.color_active_rank
+WHERE c7.color_active='true'
