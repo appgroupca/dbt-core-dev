@@ -7,7 +7,7 @@ SELECT DISTINCT
 ,ISNULL(JSON_VALUE(body, '$.payload.email'),'') AS EMAIL
 ,ISNULL(JSON_VALUE(body, '$.payload.first_name'),'') AS FIRST_NAME
 ,ISNULL(JSON_VALUE(body, '$.payload.last_name'),'') AS LAST_NAME
-,ISNULL(JSON_VALUE(body, '$.payload.last_name'),'') AS PHONE
+,ISNULL(JSON_VALUE(body, '$.payload.phone'),'') AS PHONE
 ,ISNULL(JSON_VALUE(body, '$.payload.source.location_id'),'') AS LOCATION_ID
 ,ISNULL(JSON_VALUE(body, '$.payload.source.associate_id'),'') AS ASSOCIATE_ID
 ,ISNULL(JSON_VALUE(body, '$.payload.source.associate_name'),'') AS ASSOCIATE_NAME
