@@ -45,5 +45,5 @@ AND REVISION.REVISION = ISNULL(JSON_VALUE(body,'$.payload.revision'),'')
 ) AS SOURCE_TABLE
 
 PIVOT (
-  MAX([VALUE]) FOR [NAME] IN ([birthdayMonth],[gdpr_accepted],[clientType],[gender],[language],[country])
+  MAX([VALUE]) FOR [NAME] IN ([birthdayMonth],[gdpr_accepted],[clientType],[gender],[language],[country],[newsletter_optin])
 ) AS PIVOT_TABLE
