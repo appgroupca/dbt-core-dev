@@ -15,7 +15,8 @@ CA1 as (
 	  ,SUBSTRING(Season,1, 4) AS Season
 	  ,SUBSTRING(season, CHARINDEX(' ', season) + 1, LEN( season)) AS Brand
       ,style_name
-      ,collection
+	  ,supplier_number
+      ,[collection]
 	  ,P.value as color_active
 	  ,ROW_NUMBER()OVER(PARTITION BY id ORDER BY active_colorway) as color_active_rank
 	from {{ source('centricplm','style_production_info') }}

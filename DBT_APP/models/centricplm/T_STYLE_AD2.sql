@@ -15,6 +15,7 @@ AD2 as (
 	  ,SUBSTRING(Season,1, 4) AS Season
 	  ,SUBSTRING(season, CHARINDEX(' ', season) + 1, LEN( season)) AS Brand
       ,style_name
+	  ,supplier_number
       ,[collection]
 	  ,P.value as delivery2
 	  ,ROW_NUMBER()OVER(PARTITION BY id ORDER BY _2_m_fall) as app_del2_rank

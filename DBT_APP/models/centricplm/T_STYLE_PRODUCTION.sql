@@ -50,6 +50,7 @@ select c1.[id]
 	  ,c1.[season]
 	  ,c1.[brand]
       ,c1.[style_name]
+	  ,c1.[supplier_number]
       ,c1.[collection]    
       ,c1.[supplier]
 	  ,c1.color_code
