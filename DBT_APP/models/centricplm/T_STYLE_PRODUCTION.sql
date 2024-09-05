@@ -53,6 +53,7 @@ select c1.[id]
 	  ,c1.[supplier_number]
       ,c1.[collection]    
       ,c1.[supplier]
+	  ,c1.[quote_factory]
 	  ,c1.color_code
 	  ,c2.colorways
 	  ,CASE 
