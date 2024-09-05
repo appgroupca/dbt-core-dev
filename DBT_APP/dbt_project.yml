@@ -34,6 +34,10 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   DBT_APP:
     # Config indicated by + and applies to all files under models/example/
+    ads_google:
+      +schema: google_ads
+      +materialized: table
+      +database: SHOPIFY_PROD
     newstore:
       +schema: newstore
       +materialized: table
