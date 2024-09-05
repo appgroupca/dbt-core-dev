@@ -16,6 +16,7 @@ AD4 as (
 	  ,SUBSTRING(season, CHARINDEX(' ', season) + 1, LEN( season)) AS Brand
       ,style_name
 	  ,supplier_number
+	  ,quote_factory
       ,[collection]      
 	  ,P.value as delivery4
 	  ,ROW_NUMBER()OVER(PARTITION BY id ORDER BY _4_m_fall) as app_del4_rank

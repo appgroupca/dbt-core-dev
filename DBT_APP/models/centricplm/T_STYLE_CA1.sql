@@ -16,6 +16,7 @@ CA1 as (
 	  ,SUBSTRING(season, CHARINDEX(' ', season) + 1, LEN( season)) AS Brand
       ,style_name
 	  ,supplier_number
+	  ,quote_factory
       ,[collection]
 	  ,P.value as color_active
 	  ,ROW_NUMBER()OVER(PARTITION BY id ORDER BY active_colorway) as color_active_rank
