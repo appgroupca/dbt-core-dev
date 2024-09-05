@@ -1,0 +1,24 @@
+{{ config(materialized='table') }}
+
+SELECT
+ [REGION]
+,[BRAND]
+,CASE
+	WHEN [REGION] = 'CA' THEN 'C31'
+	WHEN [REGION] = 'US' THEN 'U31'
+	WHEN [REGION] = 'EU' THEN 'N31'
+	WHEN [REGION] = 'UK' THEN 'N31'
+		END AS BRANCH
+,CASE
+	WHEN [REGION] = 'CA' THEN 'CAD'
+	WHEN [REGION] = 'US' THEN 'USD'
+	WHEN [REGION] = 'EU' THEN 'EUR'
+	WHEN [REGION] = 'UK' THEN 'GBP'
+		END AS CURRENCY
+,[DATE] AS [date]
+,[USERS] AS [Traffic]
+
+FROM [M3RPTDEV].[dbo].[Z_PBI_GA3_DATE]
+
+WHERE [DATE] <> ''
+AND [GA TYPE] <> 'GA4'

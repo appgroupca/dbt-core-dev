@@ -1,0 +1,31 @@
+WITH
+
+MCK_ADS AS (
+
+SELECT
+*
+FROM {{ref('google_ads_mck', 'V_AD_CAMPAIGN_MCK')}}
+
+),
+
+SK_ADS AS (
+
+SELECT
+*
+FROM {{ref('google_ads_sk', 'V_AD_CAMPAIGN_SK')}}
+
+),
+
+UNION_ADS AS (
+
+SELECT *
+FROM MCK_ADS
+ 
+UNION ALL
+
+SELECT *
+FROM SK_ADS
+
+)
+
+SELECT * FROM UNION_ADS

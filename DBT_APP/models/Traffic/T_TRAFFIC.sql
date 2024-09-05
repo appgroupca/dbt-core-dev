@@ -1,0 +1,14 @@
+{{ config(materialized='table') }}
+
+TRAFFIC_UNION AS (
+
+SELECT *
+FROM STORE
+
+UNION ALL
+SELECT *
+FROM GA
+
+)
+
+SELECT * FROM TRAFFIC_UNION

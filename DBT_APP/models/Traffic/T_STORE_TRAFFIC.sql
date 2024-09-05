@@ -1,0 +1,15 @@
+{{ config(materialized='table') }}
+
+SELECT
+ [ID]
+,[FISCAL_YEAR]
+,[FISCAL_PERIOD]
+,[FISCAL_WEEK]
+,[DATE]
+,[BRANCH]
+,[BRAND]
+,[CURRENCY]
+,[TRAFFIC]
+,TRAFFIC_TYPE = 'STORE'
+
+FROM [NEWSTORE_PROD].[sms].[V_CONVERSION_TRAFFIC]
