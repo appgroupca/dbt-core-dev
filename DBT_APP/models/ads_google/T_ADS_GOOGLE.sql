@@ -1,10 +1,11 @@
-WITH
+{{ config(materialized='table') }}
 
+WITH
 MCK_ADS AS (
 
 SELECT
 *
-FROM {{ref('V_AD_CAMPAIGN_MCK', 'google_ads_mck')}}
+FROM {{ref('V_AD_CAMPAIGN_MCK')}}
 
 ),
 
@@ -12,7 +13,7 @@ SK_ADS AS (
 
 SELECT
 *
-FROM {{ref('V_AD_CAMPAIGN_SK', 'google_ads_sk')}}
+FROM {{ref('V_AD_CAMPAIGN_SK')}}
 
 ),
 
