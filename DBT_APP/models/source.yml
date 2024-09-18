@@ -78,6 +78,11 @@ sources:
     tables:
       - name: date_breakdown_currency
       - name: date_breakdown_nocurrency
+  - name: google_analytics_4
+    database: SHOPIFY_PROD
+    tables: 
+      - name: date_breakdown
+      - name: items_purchased
   - name: centricplm
     database: M3RPTDEV
     schema: centricplm

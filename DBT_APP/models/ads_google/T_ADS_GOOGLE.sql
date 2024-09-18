@@ -1,0 +1,32 @@
+{{ config(materialized='table') }}
+
+WITH
+MCK_ADS AS (
+
+SELECT
+*
+FROM {{ref('V_AD_CAMPAIGN_MCK')}}
+
+),
+
+SK_ADS AS (
+
+SELECT
+*
+FROM {{ref('V_AD_CAMPAIGN_SK')}}
+
+),
+
+UNION_ADS AS (
+
+SELECT *
+FROM MCK_ADS
+ 
+UNION ALL
+
+SELECT *
+FROM SK_ADS
+
+)
+
+SELECT * FROM UNION_ADS
