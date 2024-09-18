@@ -4,7 +4,7 @@ SELECT
 ,ACC.[REGION]
 ,ACC.[BRAND]
 ,ACC.[SYSTEM]
-,[date_breakdown].[date]
+,DB.[date]
 ,new_users
 ,[sessions]
 ,[sessions]-engaged_sessions AS Bounces
@@ -21,14 +21,14 @@ SELECT
 ,CASE WHEN [ecommerce_purchases] = 0 THEN 0 ELSE CAST([sessions] AS FLOAT) / [ecommerce_purchases] END AS revenue_per_session
 
 
-FROM [SHOPIFY_PROD].[google_analytics_4].[date_breakdown]
+FROM {{ source('google_analytics_4','date_breakdown') }} as DB
 
-LEFT JOIN [M3RPTDEV].[dbo].[Z_PBI_GA_ACCOUNT_DATA] AS ACC
+LEFT JOIN {{ source('m3','Z_PBI_GA_ACCOUNT_DATA')}} AS ACC
 ON ACC.[ID] = RIGHT([property],9)
 
-LEFT JOIN [SHOPIFY_PROD].[google_analytics_4].[items_purchased]
-ON [items_purchased].[property] = [date_breakdown].[property]
-AND [items_purchased].[date] = [date_breakdown].[date]
+LEFT JOIN {{ source('google_analytics_4','items_purchased') }} as IP
+ON IP.[property] = DB.[property]
+AND IP.[date] = DB.[date]
 
 WHERE 
 ACC.[ID] IN (
@@ -39,4 +39,4 @@ ACC.[ID] IN (
 ,'356619695'
 ,'355085855'
 )
-AND CONVERT(VARCHAR,[date_breakdown].[date],23) > '2023-07-01'
+AND CONVERT(VARCHAR,DB.[date],23) > '2023-07-01'

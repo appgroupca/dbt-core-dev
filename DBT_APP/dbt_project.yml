@@ -64,6 +64,10 @@ models:
       +schema: google_analytics
       +materialized: view
       +database: SHOPIFY_PROD
+    google_analytics_4:
+      +schema: google_analytics_4
+      +materialized: table
+      +database: SHOPIFY_PROD
     loop_ca:
       +schema: loop_ca
       +materialized: table

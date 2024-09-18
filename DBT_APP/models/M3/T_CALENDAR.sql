@@ -126,7 +126,7 @@ CASE
 	WHEN [Date] > CAST(GETDATE() AS DATE) THEN ''
 END AS [Slicer Date]
 
-FROM [M3RPTDEV].[dbo].[Z_PBI_CALENDAR_DATA];
+FROM {{source('m3','Z_PBI_CALENDAR_DATA')}}
 
   )
 
