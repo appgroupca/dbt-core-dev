@@ -76,3 +76,27 @@ models:
       +schema: centricplm
       +materialized: table
       +database: M3RPTDEV
+    ca_mck:
+      +schema: ca_mck
+      +materialized: table
+      +database: SHOPIFY_PROD
+    us_mck:
+      +schema: us_mck
+      +materialized: table
+      +database: SHOPIFY_PROD
+    eu_mck:
+      +schema: eu_mck
+      +materialized: table
+      +database: SHOPIFY_PROD
+    uk_mck:
+      +schema: uk_mck
+      +materialized: table
+      +database: SHOPIFY_PROD
+    ca_sk:
+      +schema: ca_sk
+      +materialized: table
+      +database: SHOPIFY_PROD
+    us_sk:
+      +schema: us_sk
+      +materialized: table
+      +database: SHOPIFY_PROD
