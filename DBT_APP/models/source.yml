@@ -88,6 +88,66 @@ sources:
     schema: centricplm
     tables: 
       - name: style_production_info
+  - name: ca_mck
+    database: SHOPIFY_PROD
+    schema: ca_mck
+    tables:
+      - name: order
+      - name: order_line
+      - name: fulfillment
+      - name: fulfillment_order_line
+      - name: order_tag
+      - name: order_discount_code
+  - name: us_mck
+    database: SHOPIFY_PROD
+    schema: us_mck
+    tables:
+      - name: order
+      - name: order_line
+      - name: fulfillment
+      - name: fulfillment_order_line
+      - name: order_tag
+      - name: order_discount_code
+  - name: eu_mck
+    database: SHOPIFY_PROD
+    schema: eu_mck
+    tables:
+      - name: order
+      - name: order_line
+      - name: fulfillment
+      - name: fulfillment_order_line
+      - name: order_tag
+      - name: order_discount_code
+  - name: uk_mck
+    database: SHOPIFY_PROD
+    schema: uk_mck
+    tables:
+      - name: order
+      - name: order_line
+      - name: fulfillment
+      - name: fulfillment_order_line
+      - name: order_tag
+      - name: order_discount_code
+  - name: ca_sk
+    database: SHOPIFY_PROD
+    schema: ca_sk
+    tables:
+      - name: order
+      - name: order_line
+      - name: fulfillment
+      - name: fulfillment_order_line
+      - name: order_tag
+      - name: order_discount_code
+  - name: us_sk
+    database: SHOPIFY_PROD
+    schema: us_sk
+    tables:
+      - name: order
+      - name: order_line
+      - name: fulfillment
+      - name: fulfillment_order_line
+      - name: order_tag
+      - name: order_discount_code
   - name: m3
     database: M3RPTDEV
     schema: dbo
