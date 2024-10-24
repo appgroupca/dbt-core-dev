@@ -8,6 +8,7 @@ sources:
     tables:
       - name: traffic
       - name: storetraffic_historical
+      - name: storetraffic_manual
   - name: loop_ca
     database: SHOPIFY_PROD
     schema: loop_ca
