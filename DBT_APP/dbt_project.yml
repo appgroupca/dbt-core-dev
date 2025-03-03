@@ -100,3 +100,7 @@ models:
       +schema: us_sk
       +materialized: table
       +database: SHOPIFY_PROD
+    Shopify:
+      +schema: shopify
+      +materialized: table
+      +database: SHOPIFY_PROD

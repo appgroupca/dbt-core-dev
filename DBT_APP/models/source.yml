@@ -99,6 +99,7 @@ sources:
       - name: fulfillment_order_line
       - name: order_tag
       - name: order_discount_code
+      - name: gift_card
   - name: us_mck
     database: SHOPIFY_PROD
     schema: us_mck
@@ -109,6 +110,7 @@ sources:
       - name: fulfillment_order_line
       - name: order_tag
       - name: order_discount_code
+      - name: gift_card
   - name: eu_mck
     database: SHOPIFY_PROD
     schema: eu_mck
@@ -119,6 +121,7 @@ sources:
       - name: fulfillment_order_line
       - name: order_tag
       - name: order_discount_code
+      - name: gift_card
   - name: uk_mck
     database: SHOPIFY_PROD
     schema: uk_mck
@@ -129,6 +132,7 @@ sources:
       - name: fulfillment_order_line
       - name: order_tag
       - name: order_discount_code
+      - name: gift_card
   - name: ca_sk
     database: SHOPIFY_PROD
     schema: ca_sk
@@ -139,6 +143,7 @@ sources:
       - name: fulfillment_order_line
       - name: order_tag
       - name: order_discount_code
+      - name: gift_card
   - name: us_sk
     database: SHOPIFY_PROD
     schema: us_sk
@@ -149,6 +154,7 @@ sources:
       - name: fulfillment_order_line
       - name: order_tag
       - name: order_discount_code
+      - name: gift_card
   - name: m3
     database: M3RPTDEV
     schema: dbo
