@@ -2,7 +2,7 @@
 
 {{
     config(
-        target_schema='snapshots',
+        target_schema='inventory',
         unique_key='id',
         strategy='timestamp',
         updated_at='_fivetran_synced'
