@@ -104,3 +104,7 @@ models:
       +schema: shopify
       +materialized: table
       +database: SHOPIFY_PROD
+    newstore_inventory:
+      +schema: inventory
+      +materialized: table
+      +database: NEWSTORE_PROD

@@ -4,6 +4,11 @@ sources:
   - name: newstore
     tables:
       - name: event
+  - name: newstore_inventory
+    database: NEWSTORE_PROD
+    schema: inventory
+    tables:
+      - name: inventory
   - name: sms
     tables:
       - name: traffic
