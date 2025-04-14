@@ -79,6 +79,8 @@ sources:
       - name: campaign_history
       - name: basic_ad
       - name: actions_action_values
+      - name: basic_ad_action_values
+      - name: basic_ad_actions
   - name: google_analytics
     database: SHOPIFY_PROD
     tables:
