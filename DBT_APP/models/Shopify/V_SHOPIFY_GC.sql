@@ -1,4 +1,4 @@
-
+{{ config(materialized='view') }}
 
 WITH CA_GC
 as (

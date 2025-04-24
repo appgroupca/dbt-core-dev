@@ -1,10 +1,10 @@
-{{ config(materialized='view') }}
+{{ config(materialized='table') }}
 
 
 WITH 
-US_MCK as (
+CA_MCK as (
     SELECT 
-	   'US_MCK' as instance
+	   'CA_MCK' as instance
 	    ,[id]
       ,[customer_id]
       ,[user_id]
@@ -18,7 +18,7 @@ US_MCK as (
       ,[last_characters]
       ,[note]
       ,[updated_at]
-    FROM {{ source('us_mck','gift_card') }}
+    FROM {{ source('ca_mck','gift_card') }}
 )
 
-select * from US_MCK
+select * from CA_MCK
