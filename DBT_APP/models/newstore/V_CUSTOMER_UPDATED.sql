@@ -7,7 +7,7 @@ SELECT DISTINCT
 ,ISNULL(JSON_VALUE(body,'$.payload.first_name'),'') AS FIRST_NAME
 ,ISNULL(JSON_VALUE(body,'$.payload.last_name'),'') AS LAST_NAME
 ,ISNULL(JSON_VALUE(body,'$.payload.phone'),'') AS PHONE
-,ISNULL(JSON_VALUE(body,'$.payload.revision'),'') AS REVISION
+,ISNULL(cast(JSON_VALUE(body,'$.payload.revision') as int),'') AS REVISION
 
 FROM {{ source('newstore', 'event') }}
 
