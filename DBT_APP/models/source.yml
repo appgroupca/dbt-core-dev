@@ -4,6 +4,7 @@ sources:
   - name: newstore
     tables:
       - name: event
+      - name: V_FULL_CUSTOMERS
   - name: newstore_inventory
     database: NEWSTORE_PROD
     schema: inventory
@@ -96,6 +97,7 @@ sources:
     schema: centricplm
     tables: 
       - name: style_production_info
+      - name: style_material_feature
   - name: ca_mck
     database: SHOPIFY_PROD
     schema: ca_mck
