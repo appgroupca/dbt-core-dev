@@ -21,6 +21,8 @@ select
 	  ,supplier_number
 	  ,quote_factory
       ,[collection]
+	  ,app_pyramid
+	  ,category_2
 	  ,V.value as color_code
 	  ,ROW_NUMBER()OVER(PARTITION BY id ORDER BY code) as color_code_rank
 	from {{ source('centricplm','style_production_info') }}

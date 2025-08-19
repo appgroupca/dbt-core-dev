@@ -17,7 +17,9 @@ AD4 as (
       ,style_name
 	  ,supplier_number
 	  ,quote_factory
-      ,[collection]      
+      ,[collection]    
+	  ,app_pyramid
+	  ,category_2  
 	  ,P.value as delivery4
 	  ,ROW_NUMBER()OVER(PARTITION BY id ORDER BY _4_m_fall) as app_del4_rank
 	from {{ source('centricplm','style_production_info') }}

@@ -19,6 +19,8 @@ AD1 as (
 	  ,supplier_number
 	  ,quote_factory
       ,[collection]
+	  ,app_pyramid
+	  ,category_2
 	  ,P.value as delivery1
 	  ,ROW_NUMBER()OVER(PARTITION BY id ORDER BY _1_m_fall) as app_del1_rank
 	from {{ source('centricplm','style_production_info') }}

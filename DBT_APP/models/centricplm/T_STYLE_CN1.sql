@@ -19,6 +19,8 @@ CN1 as (
 	  ,supplier_number
 	  ,quote_factory
       ,[collection]
+	  ,app_pyramid
+	  ,category_2
 	  ,P.value as colorways
 	  ,ROW_NUMBER()OVER(PARTITION BY id ORDER BY colorways) as color_name_rank
 	from {{ source('centricplm','style_production_info') }}

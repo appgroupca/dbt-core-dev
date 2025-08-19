@@ -18,6 +18,8 @@ CA1 as (
 	  ,supplier_number
 	  ,quote_factory
       ,[collection]
+	  ,app_pyramid
+	  ,category_2
 	  ,P.value as color_active
 	  ,ROW_NUMBER()OVER(PARTITION BY id ORDER BY active_colorway) as color_active_rank
 	from {{ source('centricplm','style_production_info') }}

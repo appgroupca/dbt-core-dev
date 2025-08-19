@@ -17,7 +17,9 @@ AD3 as (
       ,style_name
 	  ,supplier_number
 	  ,quote_factory
-      ,[collection]      
+      ,[collection]
+	  ,app_pyramid
+	  ,category_2      
 	  ,P.value as delivery3
 	  ,ROW_NUMBER()OVER(PARTITION BY id ORDER BY _3_m_fall) as app_del3_rank
 	from {{ source('centricplm','style_production_info') }}

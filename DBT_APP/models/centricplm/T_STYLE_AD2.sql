@@ -18,6 +18,8 @@ AD2 as (
 	  ,supplier_number
 	  ,quote_factory
       ,[collection]
+	  ,app_pyramid
+	  ,category_2
 	  ,P.value as delivery2
 	  ,ROW_NUMBER()OVER(PARTITION BY id ORDER BY _2_m_fall) as app_del2_rank
 	from {{ source('centricplm','style_production_info') }}
