@@ -5,6 +5,7 @@ name: 'DBT_APP'
 version: '1.0.0'
 config-version: 2
 
+
 # This setting configures which "profile" dbt uses for this project.
 profile: 'DBT_APP'
 
@@ -27,6 +28,15 @@ clean-targets:         # directories to be removed by `dbt clean`
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
 
+seeds:
+  +quote_columns: false
+  DBT_APP:
+    verkada_store_integration:
+      +schema: verkada_traffic
+      +column_types:
+        store_id: varchar(20)
+        go_live_date: date
+
 # In this example config, we tell dbt to build all models in the example/ directory
 # as tables. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
@@ -42,6 +52,9 @@ models:
       +materialized: table
     sms:
       +schema: sms
+      +materialized: view
+    verkada_traffic:
+      +schema: verkada_traffic
       +materialized: view
     m3:
       +schema: dbo

@@ -5,6 +5,9 @@ sources:
     tables:
       - name: event
       - name: V_FULL_CUSTOMERS
+  - name: verkada_traffic
+    tables:
+      - name: verkada_traffic
   - name: newstore_inventory
     database: NEWSTORE_PROD
     schema: inventory
