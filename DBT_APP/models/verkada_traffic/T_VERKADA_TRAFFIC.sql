@@ -38,7 +38,7 @@ rolled as (
     select
         f.short_date,
         coalesce(b.branch, f.store_id) as branch,
-        round(sum(f.trend_out) * 0.80, 0) as trend_out_80
+        round(sum(f.trend_out) * 0.80, 0) as TRAFFIC
     from filtered f
     left join branch_map b
       on b.old_branch = f.store_id    -- now both sides share the same collation
