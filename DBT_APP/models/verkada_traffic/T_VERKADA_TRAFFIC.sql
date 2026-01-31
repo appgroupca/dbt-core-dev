@@ -2,8 +2,9 @@
 
 with vt as (
     select
-        -- normalize here once so all downstream comparisons use the same collation
-        cast(store_id as varchar(50)) collate SQL_Latin1_General_CP1_CI_AS as store_id,
+        -- Normalize collation once for stable comparisons
+        cast(store_id  as varchar(50)) collate SQL_Latin1_General_CP1_CI_AS as store_id,
+        cast(camera_name as varchar(64)) collate SQL_Latin1_General_CP1_CI_AS as camera_name,
         short_date,
         trend_out
     from {{ source('verkada_traffic', 'verkada_traffic') }}
@@ -11,28 +12,33 @@ with vt as (
 
 gl as (
     select
-        cast(store_id as varchar(50)) collate SQL_Latin1_General_CP1_CI_AS as store_id,
+        cast(store_id  as varchar(50)) collate SQL_Latin1_General_CP1_CI_AS as store_id,
+        cast(camera_name as varchar(64)) collate SQL_Latin1_General_CP1_CI_AS as camera_name,
         cast(go_live_date as date) as go_live_date
     from {{ ref('verkada_store_integration') }}
 ),
 
 branch_map as (
     select
-        cast(OLD_BRANCH as varchar(50)) collate SQL_Latin1_General_CP1_CI_AS as old_branch,
+        cast(OLD_BRANCH as varchar(50))  collate SQL_Latin1_General_CP1_CI_AS as old_branch,
         cast(BRANCH     as varchar(100)) collate SQL_Latin1_General_CP1_CI_AS as branch
     from {{ source('m3', 'Z_PBI_BRANCH_OLD_BRANCH') }}
 ),
 
+-- Keep only rows for cameras explicitly configured in the seed
 filtered as (
     select
         vt.short_date,
         vt.store_id,
-        gl.go_live_date, 
+        vt.camera_name,
+        gl.go_live_date,
         vt.trend_out
     from vt
-    left join gl
-      on gl.store_id = vt.store_id
+    inner join gl
+      on gl.store_id  = vt.store_id
+     and gl.camera_name = vt.camera_name
 ),
+
 
 rolled as (
     select

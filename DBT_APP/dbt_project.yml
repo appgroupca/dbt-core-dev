@@ -36,6 +36,7 @@ seeds:
       +column_types:
         store_id: varchar(20)
         go_live_date: date
+        camera_name: varchar(20)
 
 # In this example config, we tell dbt to build all models in the example/ directory
 # as tables. These settings can be overridden in the individual model files
