@@ -17,6 +17,11 @@ UNION ALL
 SELECT *
 FROM {{ ref("V_RAW_M_TRAFFIC") }}
 
+UNION ALL
+
+SELECT * 
+FROM {{ ref("V_VERKADA_TRAFFIC") }}
+
 
 ),
 

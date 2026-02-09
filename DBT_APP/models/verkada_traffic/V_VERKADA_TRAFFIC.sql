@@ -4,7 +4,7 @@ with vt as (
     select
         -- Normalize collation once for stable comparisons
         cast(store_id  as varchar(50)) collate SQL_Latin1_General_CP1_CI_AS as store_id,
-        cast(camera_name as varchar(64)) collate SQL_Latin1_General_CP1_CI_AS as camera_name,
+        cast(camera_id as varchar(64)) collate SQL_Latin1_General_CP1_CI_AS as camera_id,
         short_date,
         trend_out
     from {{ source('verkada_traffic', 'verkada_traffic') }}
@@ -13,7 +13,7 @@ with vt as (
 gl as (
     select
         cast(store_id  as varchar(50)) collate SQL_Latin1_General_CP1_CI_AS as store_id,
-        cast(camera_name as varchar(64)) collate SQL_Latin1_General_CP1_CI_AS as camera_name,
+        cast(camera_id as varchar(64)) collate SQL_Latin1_General_CP1_CI_AS as camera_id,
         cast(go_live_date as date) as go_live_date
     from {{ ref('verkada_store_integration') }}
 ),
@@ -30,20 +30,20 @@ filtered as (
     select
         vt.short_date,
         vt.store_id,
-        vt.camera_name,
+        vt.camera_id,
         gl.go_live_date,
         vt.trend_out
     from vt
     inner join gl
       on gl.store_id  = vt.store_id
-     and gl.camera_name = vt.camera_name
+     and gl.camera_id = vt.camera_id
 ),
 
 
 rolled as (
     select
-        f.short_date,
-        coalesce(b.branch, f.store_id) as branch,
+        f.short_date as [DATE],
+        coalesce(b.branch, f.store_id) as BRANCH,
         round(sum(f.trend_out) * 0.80, 0) as TRAFFIC
     from filtered f
     left join branch_map b
