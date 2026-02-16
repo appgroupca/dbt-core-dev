@@ -17,43 +17,7 @@ sources:
     tables:
       - name: traffic
       - name: storetraffic_historical
-      - name: storetraffic_manual
-  - name: loop_ca
-    database: SHOPIFY_PROD
-    schema: loop_ca
-    tables:
-      - name: return_list
-      - name: return_list_line_item
-  - name: loop_us
-    database: SHOPIFY_PROD
-    schema: loop_us
-    tables:
-      - name: return_list
-      - name: return_list_line_item
-  - name: loop_eu
-    database: SHOPIFY_PROD
-    schema: loop_eu
-    tables:
-      - name: return_list
-      - name: return_list_line_item
-  - name: loop_uk
-    database: SHOPIFY_PROD
-    schema: loop_uk
-    tables:
-      - name: return_list
-      - name: return_list_line_item
-  - name: loop_sk_ca
-    database: SHOPIFY_PROD
-    schema: loop_sk_ca
-    tables:
-      - name: return_list
-      - name: return_list_line_item
-  - name: loop_sk_us
-    database: SHOPIFY_PROD
-    schema: loop_sk_us
-    tables:
-      - name: return_list
-      - name: return_list_line_item
+      - name: storetraffic_manual 
   - name: google_ads_mck
     database: SHOPIFY_PROD
     schema: google_ads_mck
@@ -85,11 +49,6 @@ sources:
       - name: actions_action_values
       - name: basic_ad_action_values
       - name: basic_ad_actions
-  - name: google_analytics
-    database: SHOPIFY_PROD
-    tables:
-      - name: date_breakdown_currency
-      - name: date_breakdown_nocurrency
   - name: google_analytics_4
     database: SHOPIFY_PROD
     tables: 
